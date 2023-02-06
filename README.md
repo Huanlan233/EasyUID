@@ -34,7 +34,7 @@ execute as <玩家> run function euid:data/data_modify
 
 如果想修改该玩家的`data`内的`List`, 则向`euid:input`输入:
 ```MCFUNCTION
-data modify storage euid:input Input set from storage value {List:["2","4"]}
+data modify storage euid:input Input set value {List:["2","4"]}
 ```
 
 那么该玩家的`data`内的`List`会变为
