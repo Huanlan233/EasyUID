@@ -7,7 +7,7 @@
 
 `data_get`会获取对应玩家的`data`并返回到`euid:return`里。
 ```MCFUNCTION
-execute as <玩家> run function euid:data/data_modify
+execute as <玩家> run function euid:data/data_get
 ```
 
 假设`Players`列表中有一玩家的`data`如下:
@@ -24,7 +24,7 @@ execute as <玩家> run function euid:data/data_modify
 
 `data_modify`会从`euid:input`中的`Input`获取值, 将对应玩家的`data`的某一值进行改变(已有元素)或者增加(未有元素)。
 ```MCFUNCTION
-execute as <玩家> run function euid:data/data_get
+execute as <玩家> run function euid:data/data_modify
 ```
 
 假设`Players`列表中有一玩家的`data`如下:
