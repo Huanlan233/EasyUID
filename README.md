@@ -45,6 +45,3 @@ data modify storage euid:input Input set value {List:["2","4"]}
 
 ## 接口
 `default_nbts`在为玩家分配UID并将相关NBT存储到`euid:data`的时候可以选择添加其他NBT
-
-## 注意事项
-`data_get`函数查找的时间复杂度为O(n)，列表数据越多则查找时间越长。
