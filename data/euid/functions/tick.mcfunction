@@ -4,7 +4,6 @@ execute as @a if score @s euid.uid >= $euid.uid_max euid.uid run scoreboard play
 execute as @a if score @s euid.uid > $euid.uid_player_max euid.uid run scoreboard players operation $euid.uid_player_max euid.uid = @s euid.uid
 
 execute as @a unless score @s euid.uid = @s euid.uid run data modify storage euid:data Players append value {UID:-1,UUID:[-1,-1,-1,-1]}
-execute as @a unless score @s euid.uid = @s euid.uid run function #euid:register_nbt
 
 execute as @a unless score @s euid.uid = @s euid.uid run scoreboard players operation @s euid.uid = $euid.uid_max euid.uid
 
