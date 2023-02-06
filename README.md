@@ -42,6 +42,3 @@ data modify storage euid:input Input set value {List:["2","4"]}
 ```JSON
 {"UID":0,"UUID":[114,114,114,114],"List":["2","4"]}
 ```
-
-## 接口
-`default_nbts`在为玩家分配UID并将相关NBT存储到`euid:data`的时候可以选择添加其他NBT
