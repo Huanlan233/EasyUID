@@ -7,7 +7,7 @@
 
 `data_get`会获取对应玩家的`data`并返回到`euid:return`里。
 ```MCFUNCTION
-execute as <玩家> run function euid:data/data_get
+execute as <玩家> run function euid:data/data_modify
 ```
 
 假设`Players`列表中有一玩家的`data`如下:
