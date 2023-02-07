@@ -8,4 +8,6 @@ execute if score @s euid.uid = @s euid.temp run data modify storage euid:data_te
 
 execute if score @s euid.uid = @s euid.temp run data modify storage euid:data Players set from storage euid:data_temp Players
 
+execute if score @s euid.uid = @s euid.temp run data remove storage euid:data_temp Players
+
 execute unless score @s euid.uid = @s euid.temp run function euid:private/temp/data_modify_temp
