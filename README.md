@@ -12,7 +12,7 @@ execute as <玩家> run function euid:data/data_get
 
 假设 `Players` 列表中有一群玩家的 `data` 如下:
 ```JSON
-Players:[{"UID":0,"UUID":[1,1,1,1]},{"UID":1,"UUID":[2,2,2,2]},{"UID":2,"UUID":[3,3,3,3]}]
+"Players":[{"UID":0,"UUID":[1,1,1,1]},{"UID":1,"UUID":[2,2,2,2]},{"UID":2,"UUID":[3,3,3,3]}]
 ```
 
 如果想获取该玩家的 `data` , 那么返回值则为, `euid:return` :
