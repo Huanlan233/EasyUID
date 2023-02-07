@@ -43,6 +43,31 @@ data modify storage euid:input Input set value {List:["2","4"]}
 {"UID":0,"UUID":[1,1,1,1],"List":["2","4"]}
 ```
 
+### data_remove
+
+`data_remove` 会执行 `#euid:data_remove`, 你可以在内添加自定义移除内容
+```MCFUNCTION
+execute as <玩家> run function euid:data/data_remove
+```
+
+假设 `Players` 列表中有一玩家的 `data` 如下:
+```JSON
+{"UID":0,"UUID":[1,1,1,1],"List":["1"]}
+```
+
+如果想删除该玩家的 `data` 内的 `List`, 则向 `#euid:data_remove` 添加删除函数:
+```JSON
+{
+    "values": [
+        "example:rm/list"
+    ]
+}
+```
+同时你可以在删除函数内添加限定条件等:
+```MCFUNCTION
+execute if ...... run data remove storage euid:data_temp Players[-1].将移除的NBT
+```
+
 ## 注意事项
 
 - 当玩家列表过大那么 `data_modify` 和 `data_get` (默认最大同时执行指令的数量为65536,如果出现此类问题请将最大同时执行指令增加)
