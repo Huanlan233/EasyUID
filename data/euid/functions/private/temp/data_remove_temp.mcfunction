@@ -5,7 +5,7 @@ execute store result score @s euid.temp run data get storage euid:data_temp Play
 execute unless score @s euid.uid = @s euid.temp run data modify storage euid:data_temp Players prepend from storage euid:data_temp Players[-1]
 
 execute unless score @s euid.uid = @s euid.temp run data remove storage euid:data_temp Players[-1]
-# 如果相同则获取 euid:input 的内容进行删除
+# 进行删除
 execute if score @s euid.uid = @s euid.temp run function #euid:data_remove
 
 execute if score @s euid.uid = @s euid.temp run data modify storage euid:data Players set from storage euid:data_temp Players
