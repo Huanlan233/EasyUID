@@ -5,7 +5,7 @@
 
 ### data_get
 
-data_get 会获取对应玩家的 data 并返回到 euid:return 里。
+data_get 会获取对应玩家的 data 并返回到 euid:result 里。
 ```MCFUNCTION
 execute as <玩家> run function euid:data/data_get
 ```
@@ -15,9 +15,9 @@ execute as <玩家> run function euid:data/data_get
 "Players":[{"UID":0,"UUID":[1,1,1,1]},{"UID":1,"UUID":[2,2,2,2]},{"UID":2,"UUID":[3,3,3,3]}]
 ```
 
-如果想获取 UID:0 的玩家的 data , 那么 euid:return 则为:
+如果想获取 UID:0 的玩家的 data , 那么 euid:result 则为:
 ```JSON
-"Output":{"UID":0,"UUID":[1,1,1,1]}
+"Result":{"Context":{"UID":0,"UUID":[1,1,1,1]}}
 ```
 
 ### data_modify
@@ -68,7 +68,15 @@ execute as <玩家> run function euid:data/data_remove
 execute if ...... run data remove storage euid:data_temp Input[-1].将移除的NBT
 ```
 
+### data_sort
+
+直接调用使用函数即可, 会自动根据 UID 的大小对 Players data 进行排序(当然你也可以自己写一个 sort)
+```MCFUNCTION
+function euid:data/data_sort
+```
+
 ## 注意事项
 
-- 当玩家列表过大那么 data_modify 和 data_get 会出现出错的情况 (默认最大同时执行指令的数量为65536,如果出现此类问题请将最大同时执行指令增加)
+- 默认最大同时执行指令的数量为65536, 当玩家列表过大会出现错误(例如无法获取 data 无法修改等等) 
+  解决方法: 将最大同时执行指令增加
 - 当 data_modify 执行完后不会自动清除 euid:input 的内容
